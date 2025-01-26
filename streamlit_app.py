@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
 
 st.title('🪄 Machine Learning App')
 
@@ -50,6 +51,8 @@ with st.expander('Input features'):
 # Encode x
 encode = ['island', 'sex']
 df_penguins = pd.get_dummies(input_penguins, prefix=encode) # convert each of the value in the column into a unique column-name, where the tick in the box means value 1 and no tick means the value 0. Combining the column-name with the column-value. 
+
+x = df_penguins[1:] # ignore the first row (only second row and beyond)
 input_row = df_penguins[:1] # first row only
 
 # Encode y
@@ -66,8 +69,17 @@ with st.expander('Data preparation'):
   input_row
   st.write('**Encoded y**')
   y
+  
 
+# Model training and inference
+## Train the ML model
+clf = RandomForestClassifier()
+clf.fit(x, y)
 
+## Apply model to make predictions
+prediction = clf.predict(input_row)
+prediction_proba = clf.predict_proba(input_row)
 
+prediction_proba
 
 
