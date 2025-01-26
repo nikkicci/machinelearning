@@ -65,6 +65,7 @@ with st.expander('Data preparation'):
   st.write('**Encoded x (input penguin)**')
   input_row
   st.write('**Encoded y**')
+  y
 
 
 
