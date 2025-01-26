@@ -10,11 +10,11 @@ with st.expander('Data'):
   df = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/refs/heads/master/penguins_cleaned.csv')
   df
   st.write('**x**')
-  x = df.drop('species', axis=1)
-  x
+  x_raw = df.drop('species', axis=1)
+  x_raw
   st.write('**y**')
-  y = df.species
-  y
+  y_raw = df.species
+  y_raw
 
 with st.expander('Data visualization'):
     st.scatter_chart(data=df, x='bill_length_mm', y='body_mass_g', color='species')
@@ -37,19 +37,26 @@ with st.sidebar:
       'body_mass_g': body_mass_g,
       'sex': gender}
   input_df = pd.DataFrame(data, index=[0])
-  input_penguins = pd.concat([input_df, x], axis=0)
+  input_penguins = pd.concat([input_df, x_raw], axis=0)
 
-  # Encode
-  encode = ['island', 'sex']
-  df_penguins = pd.get_dummies(input_penguins, prefix=encode) # convert each of the value in the column into a unique column-name, where the tick in the box means value 1 and no tick means the value 0. Combining the column-name with the column-value. 
-  input_row = df_penguins[:1] # first row only
+# Encode x
+encode = ['island', 'sex']
+df_penguins = pd.get_dummies(input_penguins, prefix=encode) # convert each of the value in the column into a unique column-name, where the tick in the box means value 1 and no tick means the value 0. Combining the column-name with the column-value. 
+input_row = df_penguins[:1] # first row only
+
+# Encode y
+target_mapper = {'Adelie': 0,
+                'Chinstrap': 1,
+                'Gentoo': 2}
+def target_encode(val)
+  return target_mapper[val]
 
 with st.expander('Input features'):
   st.write('**Input penguin**')
   input_df
   st.write('**Combined penguins data**')
   input_penguins
-  st.write('Encoded input penguin')
+  st.write('**Encoded input penguin**')
   input_row
 
 
