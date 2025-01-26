@@ -27,7 +27,7 @@ with st.sidebar:
   bill_depth_mm = st.slider('Bill depth (mm)', 13.1, 21.5, 17.2) # min value, max value, average value
   flipper_length_mm = st.slider('Flipper length (mm)', 172.0, 231.0, 201.0) # min value, max value, average value
   body_mass_g = st.slider('Body mass (g)', 2700.0, 6300.0, 4207.0) # min value, max value, average value
-  gender = st.selectbox('Gender', ('female', 'male'))
+  gender = st.selectbox('Gender', ('male', 'female'))
   
 # Create a DataFrame for the input features
 data = {'island': island,
