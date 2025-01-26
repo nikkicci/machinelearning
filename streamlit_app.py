@@ -39,16 +39,20 @@ with st.sidebar:
   input_df = pd.DataFrame(data, index=[0])
   input_penguins = pd.concat([input_df, x], axis=0)
 
+  # Encode
+  encode = ['island', 'sex']
+  df_penguins = pd.get_dummies(input_penguins, prefix=encode) # convert each of the value in the column into a unique column-name, where the tick in the box means value 1 and no tick means the value 0. Combining the column-name with the column-value. 
+  input_row = df_penguins[:1] # first row only
+
 with st.expander('Input features'):
   st.write('**Input penguin**')
   input_df
   st.write('**Combined penguins data**')
   input_penguins
+  st.write('Encoded input penguin')
+  input_row
 
-# Encode
-encode = ['island', 'sex']
-df_penguins = pd.get_dummies(input_penguins, prefix=encode)
-df_penguins[:1] # first row only
+
 
 
 
