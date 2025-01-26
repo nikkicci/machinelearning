@@ -11,14 +11,14 @@ with st.expander('Data'):
   df
 
 with st.expander('Data'):
-st.write('**x**')
-x = df.drop('species', axis=1)
-x
+  st.write('**x**')
+  x = df.drop('species', axis=1)
+  x
 
 with st.expander('Data'):
-st.write('**y**')
-y = df.species
-y
+  st.write('**y**')
+  y = df.species
+  y
 
 with st.expander('Data visualization'):
     st.scatter_chart(data=df, x='bill_length_mm', y='body_mass_g', color='species')
