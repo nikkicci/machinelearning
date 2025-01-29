@@ -45,10 +45,6 @@ https://raw.githubusercontent.com/dataprofessor/data/refs/heads/master/penguins_
 ### 🌟 Credit
 This project was built on top of the foundation provided by [@dataprofessor](https://github.com/dataprofessor/dp-machinelearning). Thank you for your work!
 
-## Acknowledgements
-
-This project was built on top of the foundation provided by [@username](https://github.com/username). Thank you for your work!
-
 The original project can be found at [(https://github.com/dataprofessor/dp-machinelearning)]
 
 
