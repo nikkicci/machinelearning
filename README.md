@@ -49,7 +49,7 @@ This project was built on top of the foundation provided by [@dataprofessor](htt
 
 This project was built on top of the foundation provided by [@username](https://github.com/username). Thank you for your work!
 
-The original project can be found at [link to original repository](https://github.com/dataprofessor/dp-machinelearning)
+The original project can be found at [(https://github.com/dataprofessor/dp-machinelearning)]
 
 
 
